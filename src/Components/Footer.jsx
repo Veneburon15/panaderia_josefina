@@ -1,8 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Logo from '../assets/Icons/Logo_Panaderia.png'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+      <Link to='/' className=''>
+        <img src={Logo} alt="Logo Panadería Josefina" />
+      </Link>
+    </footer>
   )
 }
 
