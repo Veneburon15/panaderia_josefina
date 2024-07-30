@@ -1,0 +1,10 @@
+@import "variables", "mixins", "nav", "footer", "homePage";
+
+
+// RESET
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 1px solid purple;
+}
