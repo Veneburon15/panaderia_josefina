@@ -29,6 +29,10 @@ body{
     font-family: $text-font;
     color: $main-font-color;
 
+    main{
+        padding: 0 80px;
+    }
+
     .bakeryHeader{
         font-family: $headers-font-Outfit;
         font-weight: 500;

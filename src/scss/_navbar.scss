@@ -1,5 +1,5 @@
 header{
-    padding: 10px 50px;
+    padding: 10px 80px;
     background-color: $terciary-color;
 
     .navBar{
@@ -8,10 +8,17 @@ header{
         justify-content: space-between;
 
         div{
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            width: 27%
+            width: 27%;
+
+            .backToHome{
+                display: flex;
+                gap: 25px;
+                align-items: center;
+
+                .bakeryHeader{
+                    color: $secondary-font-color;
+                }
+            }
         };
 
         ul{

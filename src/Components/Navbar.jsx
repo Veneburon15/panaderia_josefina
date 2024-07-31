@@ -6,10 +6,10 @@ const Navbar = () => {
     <header>
         <nav className='navBar'>
             <div className='navRightDiv'>
-                <Link to='/'>
+                <Link to='/' className='backToHome'>
                     <img src={Logo} alt="Logo Panadería Josefina" className='logo' />
+                    <h2 className='bakeryHeader'>Panadería Josefina</h2>
                 </Link>
-                <h2 className='bakeryHeader'>Panadería Josefina</h2>
             </div>
             <ul className=''>
                 <li >

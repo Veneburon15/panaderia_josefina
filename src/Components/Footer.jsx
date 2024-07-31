@@ -8,8 +8,9 @@ const Footer = () => {
       <section className='leftSection'>
         <Link to='/'>
           <img src={Logo} alt="Logo Panadería Josefina" className='logo'/>
+          <h2 className='bakeryHeader'>Panadería Josefina</h2>
         </Link>
-        <h2 className='bakeryHeader'>Panadería Josefina</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, ratione.</p>
       </section>
       <nav className='footerNav'>
         <ul className=''>
