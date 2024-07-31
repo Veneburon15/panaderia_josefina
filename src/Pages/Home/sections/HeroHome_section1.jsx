@@ -2,10 +2,10 @@ import React from 'react'
 
 const HeroHome_section1 = () => {
   return (
-    <section id='hero'>
+    <section className='heroHome'>
         <div>
             <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </h2>
-            <h1>Panadería Josefina</h1>
+            <h1 className='bakeryHeader'>Panadería Josefina</h1>
         </div>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium illo omnis, suscipit tempora ad culpa.</p>
         <div>

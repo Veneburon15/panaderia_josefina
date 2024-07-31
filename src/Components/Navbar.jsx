@@ -5,21 +5,21 @@ const Navbar = () => {
   return (
     <header>
         <nav className='navBar'>
-            <div>
-                <Link to='/' className=''>
-                    <img src={Logo} alt="Logo Panadería Josefina" />
+            <div className='navRightDiv'>
+                <Link to='/'>
+                    <img src={Logo} alt="Logo Panadería Josefina" className='logo' />
                 </Link>
-                <h2>Panadería Josefina</h2>
+                <h2 className='bakeryHeader'>Panadería Josefina</h2>
             </div>
             <ul className=''>
                 <li >
-                    <NavLink to='/' className='' > Home </NavLink>
+                    <NavLink to='/' className='navText' > Home </NavLink>
                 </li>
                 <li >
-                    <NavLink to='/lunhcService' className='' > Lunch Service </NavLink>
+                    <NavLink to='/lunhcService' className='navText' > Lunch Service </NavLink>
                 </li>
                 <li >
-                    <NavLink to='/contact' className=''> Contacto </NavLink>
+                    <NavLink to='/contact' className='navText contactLink'> Contacto </NavLink>
                 </li>
                 {/* <li >
                     <NavLink to='/Contactanos' className="contactButton" > Contáctanos </NavLink>

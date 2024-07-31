@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    padding: 10px 50px;
+    background-color: $terciary-color;
+    color: $secondary-font-color;
+    justify-content: space-between;
+
+    .leftSection{
+        display: flex;
+        gap: 20px;
+    }
+
+    .footerNav{ 
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .footerNavText{
+                color: $secondary-font-color;
+            }
+        }
+
+    }
+}

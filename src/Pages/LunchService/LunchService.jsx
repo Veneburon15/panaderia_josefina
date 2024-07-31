@@ -2,7 +2,7 @@ import React from 'react'
 
 const LunchService = () => {
   return (
-    <main>
+    <main className='lunchMain'>
         
     </main>
   )

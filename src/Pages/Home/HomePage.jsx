@@ -5,7 +5,7 @@ import ContactHome_section3 from './sections/ContactHome_section3'
 
 const HomePage = () => {
   return (
-    <main>
+    <main className='homeMain'>
       <HeroHome_section1/>
       <ProductsHome_section2/>
       <ContactHome_section3/>

@@ -1,0 +1,39 @@
+header{
+    padding: 10px 50px;
+    background-color: $terciary-color;
+
+    .navBar{
+        display: flex;
+        color: $secondary-font-color;
+        justify-content: space-between;
+
+        div{
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            width: 27%
+        };
+
+        ul{
+            display: flex;
+            align-items: center;
+            width: 35%;
+            justify-content: space-between;
+
+            .navText{
+                color: $secondary-font-color;
+            }
+
+            .contactLink{
+                border: solid 3px $secondary-complementary-color;
+                padding: 5px 15px;
+            }
+            .contactLink:hover{
+                background-color: $secondary-complementary-color;
+                color: $main-font-color;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+
+    }
+}

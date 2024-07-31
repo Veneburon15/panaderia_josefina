@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ContactHome_section3 = () => {
   return (
-    <section>
+    <section className='contactHome'>
       <div>
         <h2>¿Tienes algún pedido?</h2>
         <h3>Contáctanos</h3>

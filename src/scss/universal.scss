@@ -1,10 +1,42 @@
-@import "variables", "mixins", "nav", "footer", "homePage";
-
+@import "variables", "mixins", "navbar", "footer", "homePage";
 
 // RESET
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    border: 1px solid purple;
+    // border: 1px solid purple;
+
+    a {
+        text-decoration: none;
+        color: $main-font-color;
+    }
+    
+    button {
+        font-family: $text-font;
+    }
+    
+    li{
+        list-style: none;
+    }
 }
+
+
+
+
+// UNIVERSAL STYLES
+body{
+    font-family: $text-font;
+    color: $main-font-color;
+
+    .bakeryHeader{
+        font-family: $headers-font-Outfit;
+        font-weight: 500;
+    }
+
+    .logo{
+        width: 60px;
+    }
+}
+
+

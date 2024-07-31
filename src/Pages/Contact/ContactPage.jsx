@@ -4,8 +4,8 @@ const ContactPage = () => {
   const phoneNumber = '+59896230343'; 
 
   return (
-    <main className='contactoPage'>
-      <section className='contactoMainSection'>
+    <main className='contactMain'>
+      <section className='contactoLeftSection'>
         <h2>¡Escríbenos Por WhatsApp!</h2>
         <p>Si necesitas algún presupuesto o tienes alguna consulta sobre nuestros productos, no dudes en escribirnos</p>
         <button>
