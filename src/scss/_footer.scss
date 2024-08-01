@@ -7,8 +7,7 @@ footer {
     align-items: center;
 
     .leftSection{
-        display: flex;
-        flex-direction: column;
+        @include flex_column;
         gap: 10px;
         width: 35%;
 
@@ -27,8 +26,7 @@ footer {
         width: 30%;
 
         ul{
-            display: flex;
-            flex-direction: column;
+            @include flex_column;
             gap: 10px;
 
             .footerNavText{

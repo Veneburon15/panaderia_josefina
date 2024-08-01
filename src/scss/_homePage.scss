@@ -1,42 +1,144 @@
 .homeMain{
     // HOME PAGE GENERAL STYLES
-    section{
+    section:first-child{
         height: 90vh;
     }
+
+    section{
+        height: 100vh;
+    }
+
+    section:last-child{
+        height: 30vh;
+    }
+    
 
     // HeroHome STYLES
     .heroHome{
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        // CUANDO AGREGUEMOS LA IMAGEN HAY QUE BORRAR LA LINEA DE ARRIBA
 
-        .leftTextContainer{
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            width: 50%;
+        .leftSideDiv{
+            @include flex_column;
+            height: 100%;
+            align-items: space-between;
+            width: 49%;
 
-            h1, h2 {
-                display: inline;
-                margin: 0;
-                padding: 0;
+            .leftTextContainer{
+                @include flex_column;
+                gap: 30px;
+                height: 100%;
+                justify-content: center;
+                
+                h1, h2 {
+                    display: inline;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 3rem;
+                }
+                
+                h1{
+                    color: $primary-logo-color;
+                }
+                
+                h2{
+                    color: $primary-color;
+                }
+                
+                .anos_productosContainer{
+                    @include flex_row;                
+                    gap: 40px;
+                }
             }
 
-            h1{
-                padding: 0 0 0 5px;
+            .decorationBottomLine{
+                width: 7rem;
+                height: 0.8rem;
+                background-color: $secondary-complementary-color;
+                margin: 0 0 35px 0;
             }
 
-            .anos_productosContainer{
-                display: flex;
-                flex-direction: row;
-                gap: 40px;
+        }
+
+        .rightSideDiv{
+            @include flex_row;
+            height: 100%;
+            padding: 25px 0 0 0;
+
+            .decorationRightLine{
+                height: 7rem;
+                width: 0.8rem;
+                background-color: $secondary-color;
             }
         }
+
     }
     
     
-    // ProductHome STYLES
-    
+    // ProductsHome STYLES
+    .productsHome{
+        @include flex-column;
+        gap: 20px;
+        align-items: center;
+        margin: 0 0 35px 0;
+
+        h2{
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        div{
+            height: 33%;
+
+            div{
+                height: 100%;
+
+                h2{
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .rotiseriaContainer{
+            display: flex; 
+            flex-direction: row-reverse; 
+            @include products_LayOut(50%);
+        }
+
+        .confiteriaContainer{
+            @include flex_row;
+            @include products_LayOut(50%);
+
+        }
+
+        .sandwicheriaContainer{
+            @include flex_row;
+            @include products_LayOut(33%);
+
+        }
+    }
     
     // ContactHome STYLES
+    .contactHome{
+        display: flex;
+        @include center_all;
+        background-color: $main-complementary-color;
+        border-radius: 30px;
 
+        h2{
+            font-size: 2.35rem;
+        }
+
+        h3{
+            font-weight: 450;
+        }
+
+        div{
+            @include flex-column;
+            @include center_all;
+            gap: 10px;
+        }
+    }
 }

@@ -1,0 +1,31 @@
+@mixin flex_row{
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex_column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin center_all{
+    justify-content: center;
+    align-items: center;
+}
+
+// @mixin h1_font{
+//     font-family: $headers-font-Outfit;
+//     font-weight: 500;
+//     font-size: 2rem;
+// }
+
+
+// // // HOMEPAGE MIXINS
+@mixin products_LayOut ($width){
+    div{
+        width: $width;
+    }
+    .productsTextDiv{
+        padding: 15px;
+    }
+}

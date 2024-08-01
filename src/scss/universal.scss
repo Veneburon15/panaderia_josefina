@@ -19,6 +19,21 @@
     li{
         list-style: none;
     }
+
+    p, h1, h2, h3, h4 {
+        text-wrap: balance;
+        font-family: $headers-font-Outfit;
+    }
+
+    p, a, li {
+        font-family: $text-font;
+        font-weight: 100;
+    }
+
+    h2{
+        font-weight: 600;
+    }
+    
 }
 
 
@@ -26,8 +41,8 @@
 
 // UNIVERSAL STYLES
 body{
-    font-family: $text-font;
     color: $main-font-color;
+    font-weight: 250;
 
     main{
         padding: 0 80px;
@@ -35,11 +50,16 @@ body{
 
     .bakeryHeader{
         font-family: $headers-font-Outfit;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     .logo{
         width: 60px;
+    }
+
+    section{
+        overflow: hidden;
+        // // // Si el responsive esta bien hecho al final no deberia necesitarlo
     }
 }
 
