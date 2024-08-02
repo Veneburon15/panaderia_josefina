@@ -1,3 +1,4 @@
+// UNIVERSAL MIXINS
 @mixin flex_row{
     display: flex;
     flex-direction: row;
@@ -13,19 +14,27 @@
     align-items: center;
 }
 
-// @mixin h1_font{
-//     font-family: $headers-font-Outfit;
-//     font-weight: 500;
-//     font-size: 2rem;
-// }
-
-
 // // // HOMEPAGE MIXINS
 @mixin products_LayOut ($width){
+    height: 70vh;
+    padding: 15px;
+
     div{
         width: $width;
     }
-    .productsTextDiv{
-        padding: 15px;
-    }
+}
+
+@mixin product_Father($background-color){
+    background-color: $background-color;
+    border-radius: 20px;
+}
+
+// // BENTO MIXINS
+
+@mixin bentoImg ($width, $height, $border-radius){
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+    gap: $bento-gap;
+    object-fit: cover;
 }

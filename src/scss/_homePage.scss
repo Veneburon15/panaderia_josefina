@@ -81,7 +81,6 @@
     .productsHome{
         @include flex-column;
         gap: 20px;
-        align-items: center;
         margin: 0 0 35px 0;
 
         h2{
@@ -89,22 +88,16 @@
             font-size: 3rem;
         }
 
-        div{
-            width: 100%;
-
-            .productsTextDiv{
-                @include flex_column;
-                text-align: center;
-                gap: 30px;
-                margin: 50px;
-            }
-
-            div{
-                height: 100%;
-
-                h2{
-                    font-size: 2rem;
-                }
+        .productsTextDiv{
+            @include center_all;
+            @include flex_column;
+            padding: 15px;
+            text-align: center;
+            gap: 30px;
+            margin: 50px;
+    
+            h2{
+                font-size: 2.5rem;
             }
         }
 
@@ -113,7 +106,17 @@
             @include flex_row;
             @include products_LayOut(50%);
             @include center_all;
-            padding: 15px;
+            @include product_Father($primary-color);
+
+            .panaderiaBento{
+                @include flex_row;
+                @include center_all;
+                gap: $bento-gap;
+
+                img{
+                    @include bentoImg(50%, 100%, 10px)                
+                }
+            }
 
         }
 
@@ -122,16 +125,25 @@
             @include center_all;
             display: flex; 
             flex-direction: row-reverse; 
-            padding: 15px;
+
+            .rotiseriaBento{
+                @include flex_row;
+                @include center_all;
+                height: 100%;
+                gap: $bento-gap;
+
+                img{
+                    @include bentoImg (50%, 100%, 10px)
+
+                }
+            }
         }
 
         .confiteriaContainer{
             @include flex_row;
             @include products_LayOut(50%);
             @include center_all;
-            background-color: $terciary-color;
-            border-radius: 20px;
-            padding: 15px;
+            @include product_Father($terciary-color);
 
             .productsTextDiv{
                 color: $secondary-font-color;
@@ -140,72 +152,56 @@
             .confiteriaBento{
                 @include center_all;
                 @include flex_row;  
-                height: 400px;
+                height: 100%;
                 padding: 15px;
                 gap: $bento-gap;
 
                 img{
-                    width: 25%;
-                    object-fit: cover;
-                    height: 100%;
-                    border-radius: 10px;
+                    @include bentoImg(25%, 100%, 10px);
                 }
                 
                 .fatherLeftDiv{
                     @include flex_row;
                     @include center_all;
-                    gap: $bento-gap;
-                    width: 75%;
-
+                    @include bentoImg(75%, 100%, 0);
+    
                     .childrenLeftDiv{
                         @include flex-column;
                         @include center_all;
-                        gap: $bento-gap;
-                        width: 33%;
+                        @include bentoImg (33%, 100%, 0);
 
                         .topLeftImg{
-                            height: 33%;
-                            width: 100%;
+                            @include bentoImg(100%, 33%, 10px);
                         }
                         .bottomLeftImg{
-                            height: 66%;
-                            width: 100%
+                            @include bentoImg(100%, 66%, 10px);
                         }
 
                     }
                     .childrenCenterDiv{
                         @include flex-column;
-                        gap: $bento-gap;
-                        width: 66%;
-                        height: 100%;
+                        @include bentoImg (66%, 100%, 0);
                         overflow: hidden;
                         
                         .childrenCenterTopDiv{
                             @include flex_row;
-                            gap: $bento-gap;
-                            width: 100%;
-                            height: 33%;
+                            @include bentoImg (100%, 33%, 0);
 
                             img{
-                                height: 100%;
-                                width: 50%;
+                                @include bentoImg (50%, 100%, 10px);
                             }
                         }
 
                         .childrenCenterBottomDiv{
                             @include flex-column;
-                            gap: $bento-gap;
-                            width: 100%;
-                            height: 66%;
+                            @include bentoImg (100%, 66%, 0);
 
                             img{
-                                height: 50%;
-                                width: 100%;
+                                @include bentoImg (100%, 50%, 10px);
                             }
                         }
                     }
                 }
-
             }
 
         }
@@ -214,7 +210,6 @@
             @include flex_row;
             @include products_LayOut(33%);
             @include center_all;
-            padding: 15px;
         }
     }
     
