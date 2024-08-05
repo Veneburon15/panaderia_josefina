@@ -1,11 +1,11 @@
-@import "variables", "mixins", "navbar", "footer", "homePage";
+@import "variables", "mixins", "navbar", "footer", "homePage", "wppButton";
 
 // RESET
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    // border: 1px solid purple;
+    border: 1px solid purple;
 
     a {
         text-decoration: none;

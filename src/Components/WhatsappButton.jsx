@@ -11,6 +11,7 @@ const WhatsAppButton = () => {
     //   className={`whatsapp-button ${showButton ? 'show' : 'hide'}`}
       target="_blank"
       rel="noopener noreferrer"
+      className='wppButton'
     >
         Escríbenos
         {/* <img src={WppIcon} alt="ícono de WhatsApp" className='iconWpp'/> */}

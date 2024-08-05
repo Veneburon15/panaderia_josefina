@@ -111,6 +111,8 @@
             .panaderiaBento{
                 @include flex_row;
                 @include center_all;
+                padding: 15px;
+                height: 100%;
                 gap: $bento-gap;
 
                 img{
