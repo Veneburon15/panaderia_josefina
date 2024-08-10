@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path='lunchService' element={<LunchService />} />
+          <Route path='/lunchService' element={<LunchService />} />
         </Routes>
         <WhatsAppButton/>
         <Footer/>

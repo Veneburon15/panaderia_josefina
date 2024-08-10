@@ -34,11 +34,11 @@ header{
             .contactLink{
                 border: solid 3px $secondary-complementary-color;
                 padding: 5px 15px;
+                transition: all 0.2s ease-in-out;
             }
             .contactLink:hover{
                 background-color: $secondary-complementary-color;
                 color: $main-font-color;
-                transition: all 0.2s ease-in-out;
             }
         }
 
