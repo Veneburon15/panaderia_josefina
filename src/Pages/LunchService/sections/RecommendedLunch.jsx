@@ -1,9 +1,43 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-const RecommendedLunch = () => {
+const RecommendedLunch = ({}, recommendedSection) => {
   return (
-    <section className='recommendedLunch'>RecommendedLunch</section>
+    <section ref={recommendedSection} className='recommendedLunch'>
+      <h2>Aquí algunas opciones para tu reunión</h2>
+      <div className='madeLunchContainer'>
+        <div className='madeLunch'>
+          <h4>Lunch para (?) personas</h4>
+          <p className='lunchContent'></p>
+          <p className='price'></p>
+        </div>
+        <div className='madeLunch'>
+          <h4>Lunch para (?) personas</h4>
+          <p className='lunchContent'></p>
+          <p className='price'></p>
+        </div>
+        <div className='madeLunch'>
+          <h4>Lunch para (?) personas</h4>
+          <p className='lunchContent'></p>
+          <p className='price'></p>
+        </div>
+        <div className='madeLunch'>
+          <h4>Lunch para (?) personas</h4>
+          <p className='lunchContent'></p>
+          <p className='price'></p>
+        </div>
+        <div className='madeLunch'>
+          <h4>Lunch para (?) personas</h4>
+          <p className='lunchContent'></p>
+          <p className='price'></p>
+        </div>
+        <div className='madeLunch'>
+          <h4>Lunch para (?) personas</h4>
+          <p className='lunchContent'></p>
+          <p className='price'></p>
+        </div>
+      </div>
+    </section>
   )
 }
 
-export default RecommendedLunch
+export default forwardRef(RecommendedLunch); 

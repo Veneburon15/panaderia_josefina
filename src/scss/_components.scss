@@ -17,4 +17,50 @@
 
 // // CONTACT SECTION STYLES
 .contact{
+    @include flex_column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $main-complementary-color;
+    padding: 5px 5px 15px 5px;
+    width: 100%;
+    border-radius: 10px;
+
+    h2{
+        font-size: 2rem;
+    }
+    h3{
+        font-size: 1.3rem;
+    }
+
+    .container{
+        @include flex_row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+
+        .headerContainer{
+            @include flex_column;
+            @include center_all;
+            width: 40%;
+            gap: 10px;
+            
+        }
+    
+        .decorationSpan{
+            height: 90%;
+            width: 3px;
+            background-color: $terciary-color;
+            border-radius: 5px;
+        }
+    
+        .visitUs{
+            @include flex_column;
+            @include center_all;
+            gap: 10px;
+            width: 40%;
+    
+        }
+    }
+
+
 }

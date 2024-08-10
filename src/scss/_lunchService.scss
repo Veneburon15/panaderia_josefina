@@ -1,7 +1,10 @@
 .lunchMain{
+    @include flex_column;
+    gap: 40px;
+
     //LUNCH SERVICE PAGE GENERAL STYLES
     section:first-child{
-        height: 87vh;
+        height: 88vh;
     }
     section{
         min-height: 10vh;
@@ -126,5 +129,26 @@
                 }
             }
         }
+    }
+
+    .recommendedLunch{
+        @include flex_column;
+
+        .madeLunchContainer{
+            @include flex_row;
+            gap: 20px;
+            width: 100%;
+
+            .madeLunch{
+                width: 30%;
+                height: max-content;
+            }
+
+        }
+
+    }
+
+    .customLunch{
+
     }
 }

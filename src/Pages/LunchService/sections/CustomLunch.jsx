@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-const CustomLunch = () => {
+const CustomLunch = ({}, customSection) => {
   return (
-    <section className='customLunch'>CustomLunch</section>
+    <section ref={customSection} className='customLunch'>CustomLunch</section>
   )
 }
 
-export default CustomLunch
+export default forwardRef(CustomLunch); 

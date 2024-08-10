@@ -25,7 +25,11 @@
         font-family: $headers-font-Outfit;
     }
 
-    p, a, li {
+    p{
+        font-weight: 400;
+    }
+
+    a, li {
         font-family: $text-font;
         font-weight: 100;
     }

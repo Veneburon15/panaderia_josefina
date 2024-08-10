@@ -18,7 +18,7 @@ const Footer = () => {
             <NavLink to='/' className='footerNavText' > Home </NavLink>
           </li>
           <li >
-            <NavLink to='/lunhcService' className='footerNavText' > Lunch Service </NavLink>
+            <NavLink to='/lunchService' className='footerNavText' > Lunch Service </NavLink>
           </li>
           <li >
             <NavLink to='/contact' className='footerNavText'> Contacto </NavLink>

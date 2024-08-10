@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import CustomLunch from './sections/CustomLunch'
 import RecommendedLunch from './sections/RecommendedLunch'
 import Contact from '../../Components/Contact'
 
 const LunchService = () => {
+  const customSection = useRef(null);
+  const recommendedSection = useRef(null); 
+
+  const scrollToSection = (sectionRef) => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' })
+  };
+
   return (
     <main className='lunchMain'>
       <section className='heroLunch'>
@@ -27,18 +34,18 @@ const LunchService = () => {
           <div className='lunchPicking'>
             <div className='builtLunch'>
               <h4>Tenemos varias opciones ya ideadas para vos</h4>
-              <button>Míralas aquí</button>
+              <button onClick={() => scrollToSection (recommendedSection)}>Míralas aquí</button>
             </div>
             <div className='customLunch'>
               <h4>O puedes crear tu propio Lunch</h4>
-              <button>Creálo aquí</button>
+              <button onClick={() => scrollToSection(customSection)}>Creálo aquí</button>
             </div>
           </div>
         </div>
         <Contact/>
       </section>
-      <CustomLunch/>
-      <RecommendedLunch/>
+      <RecommendedLunch ref={recommendedSection}/>
+      <CustomLunch ref={customSection}/>
     </main>
   )
 }
