@@ -1,11 +1,23 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
+import ProductPicking from './CustomLunchComponents/ProductPicking';
+import LunchListRendering from './CustomLunchComponents/LunchListRendering';
 
 const CustomLunch = ({}, customSection) => {
+  const [selectedProducts, setSelectedProducts] = useState([]);
+
+  const handleAddProduct = (product) => {
+    setSelectedProducts([...selectedProducts, product]);
+  };
+
+
   return (
     <section ref={customSection} className='customLunch'>
       <h2>Crea tu lunch perfecto</h2>
-      <h3>¿Tienes una idea pero no sabes cuanto puede costar?</h3>
-      <p>Has un presupuesto con nosotros</p>
+      <h3>Tienes una idea... ¿pero no sabes cuanto puede costar? <br />Has un presupuesto con nosotros</h3>
+      <div className='customLunchContainer'>
+        <ProductPicking onAddProduct={handleAddProduct}/>
+        <LunchListRendering products={selectedProducts}/>
+      </div>
     </section>
   )
 }

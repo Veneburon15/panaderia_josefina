@@ -1,6 +1,6 @@
 .lunchMain{
     @include flex_column;
-    gap: 40px;
+    gap: 20px;
 
     //LUNCH SERVICE PAGE GENERAL STYLES
     section:first-child{
@@ -8,6 +8,9 @@
     }
     section{
         height: max-content;
+    }
+    section:last-child{
+        margin-bottom: 40px;
     }
 
     h2{
@@ -129,6 +132,7 @@
                 
                 .customLunch{
                     background-color: $secondary-background-color;
+                    color: $main-font-color;
                 }
             }
         }
@@ -199,9 +203,60 @@
         text-align: center;
         background-color: $main-background-color;
         border-radius: 10px;
-        padding: 15px;
-        gap: 15px;
+        padding: 15px 15px 25px 15px;
+        gap: 10px;
         color: $secondary-font-color;
 
+        h3{
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
+        .customLunchContainer{
+            @include flex_row;
+            width: 100%;
+            justify-content: space-evenly;
+
+            h3{
+                font-size: 1.5rem;
+                font-weight: 550;
+            }
+            h4{
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+
+            .productTypeSection{
+                @include flex_column;
+                gap: 10px;
+                height: max-content;
+                width: 33%;
+    
+                .accordionDiv{
+                    @include flex_column;
+                    gap: 5px;
+
+                    .toggleTrigger{
+                        cursor: pointer;
+                    }
+                    .toggleTrigger:hover{
+                        color: black;
+                    }
+
+                    ul{
+                        @include flex_column;
+                        gap: 5px;
+
+                        .list{
+                            margin: 0 10px 0 0;
+                        }
+                    }
+                }
+            }
+
+            .listRenderingSection{
+                width: 66%;
+            }
+        }
     }
 }
