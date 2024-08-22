@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ProductPicking = ({ onAddProduct }) => {
+const ProductPicking = ({ onAddProduct }, Lunchs) => {
     // // // TOGGLE FUNCTIONALITY
     const [activeSections, setActiveSections] = useState({
       sandwicheria: false,
@@ -34,6 +34,7 @@ const ProductPicking = ({ onAddProduct }) => {
         alert('Este producto ya ha sido agregado.');
     }
     };
+
 
     return (
         <section className="productTypeSection">
