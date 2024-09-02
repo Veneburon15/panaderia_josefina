@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Counter/>
         <Navbar/>
         <Routes>
           <Route path="/" element={<HomePage />} />

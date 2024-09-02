@@ -4,7 +4,9 @@ import Item from './Item'
 const MadeLunchContainer = ({lunchs}) => {
   return (
     <div className='madeLunchContainer'>
-        {lunchs.map(lunch => <Item key={lunch.id} {...lunch}/>)}
+        {lunchs.map (lunch => 
+        <Item key={lunch.id} {...lunch}/>
+        )}
     </div>
   )
 }

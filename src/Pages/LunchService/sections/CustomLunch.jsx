@@ -9,13 +9,13 @@ const CustomLunch = ({}, customSection) => {
     setSelectedProducts([...selectedProducts, product]);
   };
 
-
   return (
     <section ref={customSection} className='customLunch'>
       <h2>Crea tu lunch perfecto</h2>
       <h3>Tienes una idea... ¿pero no sabes cuanto puede costar? <br />Has un presupuesto con nosotros</h3>
       <div className='customLunchContainer'>
         <ProductPicking onAddProduct={handleAddProduct}/>
+        <span className='decorationSpan'></span>
         <LunchListRendering products={selectedProducts}/>
       </div>
     </section>

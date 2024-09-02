@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Item = ({id, cantidadPersonas, productosLunch, precio}) => {
+const Item = ({cantidadPersonas, productosLunch, precio}) => {
   return (
     <div className='madeLunch'>
         <h4> Lunch para {cantidadPersonas}</h4>
