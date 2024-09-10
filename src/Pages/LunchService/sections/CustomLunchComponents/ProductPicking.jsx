@@ -3,77 +3,64 @@ import { getProducts } from '../../../../async';
 import ProductsCategory from './ProductsCategory';
 
 const ProductPicking = ({ onAddProduct }) => {
-    // // PRODUCTS FETCHING
     const [products, setProducts] = useState([]);
+
     useEffect(() => {
         getProducts()
         .then(response => setProducts(response))
         .catch((error) => console.log(error));
     }, []);
     
-    // // PRODUCTS FILTERING FOR CATEGORY
     const filteredProducts = (category) => {
         return products.filter(product => product.categoria === category);
     };
 
-    // // SELECTED PRODUCTS ARRAY FUNCTIONALITY
-    const [selectedProducts, setSelectedProducts] = useState(new Set());
     const handleProductSelect = (product) => {
-        if (!selectedProducts.has(product.id)) {
-            selectedProducts.add(product.id);
-            setSelectedProducts(new Set(selectedProducts));
-            onAddProduct(product);
-        } else {
-            alert('Este producto ya ha sido agregado.');
-        }
+        onAddProduct(product);
     };
-    
-    // // TOGGLE FUNCTIONALITY
-    const [activeSections, setActiveSections] = useState({
-      sandwichesTriang: false,
-      sandwichesCopetin: false,
-      bocaditosCalientes: false,
-      saladitos: false,
-    });
+
+    const [activeSection, setActiveSection] = useState(null);
 
     const toggleSection = (sectionName) => {
-        setActiveSections((prevSections) => ({
-            ...prevSections,
-            [sectionName]: !prevSections[sectionName],
-        }));
+        setActiveSection((prevSection) =>
+            prevSection === sectionName ? null : sectionName
+        );
     };
-    
 
     return (
         <section className="productTypeSection">
             <h3>Elige los productos</h3>
             <ProductsCategory
                 title="Sandwiches Triangulares"
-                isActive={activeSections.sandwichesTriang}
+                isActive={activeSection === 'sandwichesTriang'}
                 toggleSection={() => toggleSection('sandwichesTriang')}
                 products={filteredProducts('Sandwiches Triangulares')}
                 handleProductSelect={handleProductSelect}
+                category="Sandwiches Triangulares"
             />
             <ProductsCategory
                 title="Sandwiches de Copetín"
-                isActive={activeSections.sandwichesCopetin}
+                isActive={activeSection === 'sandwichesCopetin'}
                 toggleSection={() => toggleSection('sandwichesCopetin')}
-                products={filteredProducts('Sandwiches Copetin')}
+                products={filteredProducts('Sandwiches de Copetín')}
                 handleProductSelect={handleProductSelect}
+                category="Sandwiches de Copetín"
             />
             <ProductsCategory
                 title="Bocaditos Calientes"
-                isActive={activeSections.bocaditosCalientes}
+                isActive={activeSection === 'bocaditosCalientes'}
                 toggleSection={() => toggleSection('bocaditosCalientes')}
                 products={filteredProducts('Bocaditos Calientes')}
                 handleProductSelect={handleProductSelect}
+                category="Bocaditos Calientes"
             />
             <ProductsCategory
                 title="Saladitos"
-                isActive={activeSections.saladitos}
+                isActive={activeSection === 'saladitos'}
                 toggleSection={() => toggleSection('saladitos')}
                 products={filteredProducts('Saladitos')}
                 handleProductSelect={handleProductSelect}
+                category="Saladitos"
             />
         </section>
     );

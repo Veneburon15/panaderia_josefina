@@ -9,7 +9,7 @@ const ProductsCategory = ({ title, isActive, toggleSection, products, handleProd
                     <ul>
                         {products.map((product) => (
                             <li key={product.id} className='list'>
-                                {product.nombre} - {product.precioUnidad}
+                                {product.nombre} - ${product.precioUnidad}
                                 <button onClick={() => handleProductSelect(product)}>Agregar</button>
                             </li>
                         ))}

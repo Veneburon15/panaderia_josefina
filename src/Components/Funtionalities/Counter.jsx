@@ -19,9 +19,9 @@ const Counter = () => {
 
     return (
         <>
-            <button onClick={addItems}> + </button>
-            <p> {count} </p>
             <button onClick={sustractItems}> - </button>
+            <p> {count} </p>
+            <button onClick={addItems}> + </button>
         </>
   )
 }

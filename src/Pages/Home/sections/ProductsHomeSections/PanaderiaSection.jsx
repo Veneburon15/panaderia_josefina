@@ -1,7 +1,6 @@
 import React from 'react'
-// // IMPORTS FROM PANADERIA SECTION
-import bizcochos from '../../../../assets/Images/Panaderia/bizcochos.jpg'
-import pan from '../../../../assets/Images/Panaderia/pan.jpg'
+import bizcochos from '../../../../assets/Images/Panaderia/breadTop.jpg'
+import pan from '../../../../assets/Images/Panaderia/breadMix.jpg'
 
 
 const PanaderiaSection = () => {

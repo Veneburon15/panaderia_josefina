@@ -1,8 +1,8 @@
 import React from 'react'
 import sandwicheria from '../../../assets/Images/Sandwicheria/surt-topView.jpg'
-import rotiseria from '../../../assets/Images/Rotiseria/pizza_c-gusto.jpg'
-import confiteria from '../../../assets/Images/Confiteria/masa-seca-topViewRight.jpg'
-import panaderia from '../../../assets/Images/Panaderia/pan.jpg'
+import rotiseria from '../../../assets/Images/Rotiseria/vegetableCookies.jpg'
+import confiteria from '../../../assets/Images/Confiteria/strawberriesCake2.jpg'
+import panaderia from '../../../assets/Images/Panaderia/breadTop.jpg'
 
 const HeroHome_section1 = () => {
   return (
