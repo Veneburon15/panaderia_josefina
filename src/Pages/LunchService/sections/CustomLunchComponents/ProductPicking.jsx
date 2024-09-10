@@ -29,7 +29,7 @@ const ProductPicking = ({ onAddProduct }) => {
 
     return (
         <section className="productTypeSection">
-            <h3>Elige los productos</h3>
+            <h3 className='secondaryCustomHeader'>Elige los productos</h3>
             <ProductsCategory
                 title="Sandwiches Triangulares"
                 isActive={activeSection === 'sandwichesTriang'}

@@ -5,7 +5,7 @@ const Item = ({cantidadPersonas, productosLunch, precio}) => {
     <div className='madeLunch'>
         <h4> Lunch para {cantidadPersonas}</h4>
         <span className='decorationSpan'></span>
-        <p className='lunchContent'>{productosLunch}</p>
+        <pre className='lunchContent'>{productosLunch}</pre>
         <p className='price'>{precio}</p>
     </div>
   )

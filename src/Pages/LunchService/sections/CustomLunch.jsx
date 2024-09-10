@@ -2,9 +2,10 @@ import React, { forwardRef, useState } from 'react';
 import ProductPicking from './CustomLunchComponents/ProductPicking';
 import LunchListRendering from './CustomLunchComponents/LunchListRendering';
 
-const CustomLunch = ({}, customSection) => {
+const CustomLunch = (props, customSection) => {
   const [selectedProducts, setSelectedProducts] = useState([]);
 
+  // Función para manejar la adición de productos
   const handleAddProduct = (product) => {
     setSelectedProducts(prevProducts => {
       // Verifica si el producto ya está en la lista
@@ -15,6 +16,7 @@ const CustomLunch = ({}, customSection) => {
     });
   };
 
+  // Función para manejar la eliminación de productos
   const handleRemoveProduct = (productId) => {
     setSelectedProducts(prevProducts => 
       prevProducts.filter(product => product.id !== productId)
@@ -24,11 +26,19 @@ const CustomLunch = ({}, customSection) => {
   return (
     <section ref={customSection} className='customLunch'>
       <h2>Crea tu lunch perfecto</h2>
-      <h3>Tienes una idea... ¿pero no sabes cuanto puede costar? <br />Has un presupuesto con nosotros</h3>
+      <h3>Tienes una idea... ¿pero no sabes cuanto puede costar? <br />Haz un presupuesto con nosotros</h3>
       <div className='customLunchContainer'>
+        {/* Pasar la función handleAddProduct correctamente */}
         <ProductPicking onAddProduct={handleAddProduct} />
+
         <span className='decorationSpan'></span>
-        <LunchListRendering products={selectedProducts} onRemoveProduct={handleRemoveProduct} />
+
+        {/* Pasar tanto productos como la función onRemoveProduct */}
+        <LunchListRendering 
+          products={selectedProducts} 
+          setProducts={setSelectedProducts} 
+          onRemoveProduct={handleRemoveProduct} 
+        />
       </div>
     </section>
   );

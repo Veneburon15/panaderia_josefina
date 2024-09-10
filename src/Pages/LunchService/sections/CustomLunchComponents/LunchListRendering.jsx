@@ -52,7 +52,7 @@ const LunchListRendering = ({ products, setProducts }) => {
     };
 
     return (
-      <div>
+      <div className='counter'>
         <button onClick={handleDecrement}>-</button>
         <span>{count}</span>
         <button onClick={handleIncrement}>+</button>
@@ -120,17 +120,21 @@ const LunchListRendering = ({ products, setProducts }) => {
 
   return (
     <section className='listRenderingSection'>
-      <h3>Aquí los productos de tu Lunch</h3>
+      <h3 className='secondaryCustomHeader'>Aquí están los productos de tu Lunch</h3>
       <ul>
         {products.map((product) => (
           <div key={product.id} className="productItem">
-            <li>{getCategoryTitle(product.categoria)} {product.nombre} - ${product.precioUnidad}</li>
-            <Counter 
-              productId={product.id} 
-              category={product.categoria} 
-            />
-            <p>Total: ${calculateTotal(product).toFixed(1)}</p>
-            <button onClick={() => handleRemoveProduct(product.id)}>Eliminar</button>
+            <div className='itemTopDiv'>
+              <li>{getCategoryTitle(product.categoria)} {product.nombre} - ${product.precioUnidad}</li>
+              <Counter 
+                productId={product.id} 
+                category={product.categoria} 
+              />
+            </div>
+            <div className='itemBelowDiv'>
+              <button onClick={() => handleRemoveProduct(product.id)}>Eliminar</button>
+              <p>Total: ${calculateTotal(product).toFixed(1)}</p>
+            </div>
           </div>
         ))}
       </ul>

@@ -2,37 +2,37 @@ const Lunchs = [
     {
         id: 1,
         cantidadPersonas: '6 Personas',
-        productosLunch: '42 Sandwiches de Copetín (Jamón y queso / Surtidos) 12 Jesuitas 1/2 Kg de masas',
+        productosLunch: '42 Sandwiches de Copetín (Jamón y queso / Surtidos) \n 12 Jesuitas \n 1/2 Kg de masas',
         precio: '$1733',
     }, 
     {
         id: 2,
         cantidadPersonas: '10 Personas',
-        productosLunch: '48 Sandwiches de Copetín (Jamón y queso / Surtidos) 26 Jesuitas 26 Saladitos 3/4 Kg de masas',
+        productosLunch: '48 Sandwiches de Copetín (Jamón y queso / Surtidos) \n 26 Jesuitas \n 26 Saladitos \n 3/4 Kg de masas',
         precio: '$2801',
     },
     {
         id: 3,
         cantidadPersonas: '15 Personas',
-        productosLunch: '85 Sandwiches de Copetín (Jamón y queso / Surtidos) 35 Jesuitas 35 Saladitos 1 Kg de masas',
+        productosLunch: '85 Sandwiches de Copetín (Jamón y queso / Surtidos) \n 35 Jesuitas \n 35 Saladitos \n 1 Kg de masas',
         precio: '$4400',
     },
     {
         id: 4,
         cantidadPersonas: '20 Personas',
-        productosLunch: '96 Sandwiches de Copetín (Jamón y queso / Surtidos) 50 Jesuitas 50 Saladitos 1 Kg de masas',
+        productosLunch: '96 Sandwiches de Copetín (Jamón y queso / Surtidos) \n 50 Jesuitas \n 50 Saladitos \n 1 Kg de masas',
         precio: '$5436',
     },
     {
         id: 5,
         cantidadPersonas: '25 Personas',
-        productosLunch: '120 Sandwiches de Copetín (Jamón y queso / Surtidos) 50 Jesuitas 50 Saladitos 1 1/2 Kg de masas',
+        productosLunch: '120 Sandwiches de Copetín (Jamón y queso / Surtidos) \n 50 Jesuitas \n 50 Saladitos \n 1 1/2 Kg de masas',
         precio: '$6375',
     },
     {
         id: 6,
         cantidadPersonas: '50 Personas',
-        productosLunch: '250 Sandwiches de Copetín (Jamón y queso / Surtidos) 100 Jesuitas 100 Saladitos 100 Croquetitas 150 Empanaditas 1 Torta de 5Kg',
+        productosLunch: '250 Sandwiches de Copetín (Jamón y queso / Surtidos) \n 100 Jesuitas \n 100 Saladitos \n 100 Croquetitas \n 150 Empanaditas \n 1 Torta de 5Kg',
         precio: '$17096',
     }
 ]
