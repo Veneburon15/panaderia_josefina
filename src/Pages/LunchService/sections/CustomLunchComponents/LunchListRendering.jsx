@@ -125,21 +125,21 @@ const LunchListRendering = ({ products, setProducts }) => {
         {products.map((product) => (
           <div key={product.id} className="productItem">
             <div className='itemTopDiv'>
-              <li>{getCategoryTitle(product.categoria)} {product.nombre} - ${product.precioUnidad}</li>
+              <p>{getCategoryTitle(product.categoria)} {product.nombre} - <strong>${product.precioUnidad} c/u</strong> </p>
               <Counter 
                 productId={product.id} 
                 category={product.categoria} 
               />
             </div>
             <div className='itemBelowDiv'>
-              <button onClick={() => handleRemoveProduct(product.id)}>Eliminar</button>
+              <button className='deleteButton' onClick={() => handleRemoveProduct(product.id)}>Eliminar Producto</button>
               <p>Total: ${calculateTotal(product).toFixed(1)}</p>
             </div>
           </div>
         ))}
       </ul>
       <h4>Total General: ${calculateTotalArray().toFixed(1)}</h4>
-      <button onClick={handleSendWhatsApp}>Enviar por WhatsApp</button> {/* Botón para enviar el mensaje */}
+      <button className='whatsAppSendButton' onClick={handleSendWhatsApp}>Enviar pedido por WhatsApp</button>
     </section>
   );
 };

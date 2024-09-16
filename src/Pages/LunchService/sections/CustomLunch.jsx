@@ -30,9 +30,7 @@ const CustomLunch = (props, customSection) => {
       <div className='customLunchContainer'>
         {/* Pasar la función handleAddProduct correctamente */}
         <ProductPicking onAddProduct={handleAddProduct} />
-
-        <span className='decorationSpan'></span>
-
+        
         {/* Pasar tanto productos como la función onRemoveProduct */}
         <LunchListRendering 
           products={selectedProducts} 

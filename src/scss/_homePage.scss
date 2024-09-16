@@ -8,14 +8,12 @@
         height: 30vh;
         margin: 0 0 40px 0;
     }
-    // padding: 0 80px;
 
     // HeroHome STYLES
     .heroHome{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // CUANDO AGREGUEMOS LA IMAGEN HAY QUE BORRAR LA LINEA DE ARRIBA
 
         .leftSideDiv{
             @include flex_column;
