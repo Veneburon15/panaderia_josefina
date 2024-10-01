@@ -1,4 +1,4 @@
-@import "variables", "mixins", "navbar", "footer", "homePage", "lunchService", "components";
+@import "variables", "mixins", "navbar", "footer", "homePage", "lunchService", "components", "contactPage";
 
 // RESET
 * {
@@ -38,8 +38,8 @@
 
     h2{
         font-weight: 600;
+        font-size: 2rem;
     }
-    
 }
 
 
