@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ContactPage = () => {
-  const phoneNumber = '+59896230343'; 
+  const phoneNumber = '59895356894'; 
 
   return (
     <main className='contactMain'>

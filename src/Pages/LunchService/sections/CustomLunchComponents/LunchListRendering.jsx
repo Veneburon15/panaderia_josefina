@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const LunchListRendering = ({ products, setProducts }) => {
   const [quantities, setQuantities] = useState({});
+  const phoneNumber = '59895356894'; // Número en formato internacional sin el '+'
 
   // Función para actualizar la cantidad de un producto específico
   const handleCountChange = (productId, newCount) => {
@@ -13,7 +14,7 @@ const LunchListRendering = ({ products, setProducts }) => {
 
   // Función para eliminar un producto del array
   const handleRemoveProduct = (productId) => {
-    const updatedProducts = products.filter(product => product.id !== productId);
+    const updatedProducts = products.filter((product) => product.id !== productId);
     setQuantities((prevQuantities) => {
       const { [productId]: _, ...restQuantities } = prevQuantities;
       return restQuantities;
@@ -36,7 +37,6 @@ const LunchListRendering = ({ products, setProducts }) => {
     }
   };
 
-  // Componente Counter integrado dentro de LunchListRendering
   const Counter = ({ productId, category }) => {
     const count = quantities[productId] || getIncrementStep(category);
     const incrementStep = getIncrementStep(category);
@@ -52,7 +52,7 @@ const LunchListRendering = ({ products, setProducts }) => {
     };
 
     return (
-      <div className='counter'>
+      <div className="counter">
         <button onClick={handleDecrement}>-</button>
         <span>{count}</span>
         <button onClick={handleIncrement}>+</button>
@@ -60,86 +60,74 @@ const LunchListRendering = ({ products, setProducts }) => {
     );
   };
 
-  // Función para calcular el precio total basado en las cantidades y precios
   const calculateTotal = (product) => {
     const pricePerUnit = parseFloat(product.precioUnidad);
     const count = parseInt(quantities[product.id]) || getIncrementStep(product.categoria);
-
-    if (isNaN(pricePerUnit) || isNaN(count)) {
-      console.error('Error en calcular el total: precioUnidad o cantidad no es un número válido.');
-      return 0;
-    }
-
-    return pricePerUnit * count;
+    return pricePerUnit * count || 0;
   };
 
-  // Función para calcular el total del array de productos
   const calculateTotalArray = () => {
     return products.reduce((total, product) => {
       return total + calculateTotal(product);
     }, 0);
   };
 
-  // Función para obtener el título adecuado basado en la categoría
-  const getCategoryTitle = (category) => {
-    switch (category) {
-      case 'Sandwiches Triangulares':
-        return 'Sandwiches Triangulares de';
-      case 'Sandwiches de Copetín':
-        return 'Sandwiches de Copetín de';
-    }
-  };
-
-  // Función para generar el mensaje para WhatsApp
   const generateMessage = (products) => {
-    const productDetails = products.map(product =>
-      `_*Producto:*_ ${product.nombre}, Precio por unidad: ${product.precioUnidad}, _*Cantidad:*_ ${quantities[product.id] || getIncrementStep(product.categoria)}`
+    const productDetails = products.map(
+      (product) =>
+        `_*Producto:*_ ${product.nombre}, Precio por unidad: ${product.precioUnidad}, _*Cantidad:*_ ${
+          quantities[product.id] || getIncrementStep(product.categoria)
+        }`
     ).join('\n');
-    
+
     const total = calculateTotalArray().toFixed(1);
     return `*Tu pedido:*\n${productDetails}\n\n*Precio Total:* $${total}`;
   };
 
-  // Función para crear el enlace de WhatsApp
   const createWhatsAppLink = (message) => {
     const encodedMessage = encodeURIComponent(message);
-    return `https://wa.me/?text=${encodedMessage}`;
+    const phoneNumber = '59895356894'
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
 
-  // Función para manejar el envío del mensaje por WhatsApp
   const handleSendWhatsApp = () => {
     const message = generateMessage(products);
     const link = createWhatsAppLink(message);
-    window.open(link, '_blank'); // Abre el enlace en una nueva pestaña
+    window.open(link, '_blank');
   };
 
-  // Debug: Verifica las cantidades actualizadas
   useEffect(() => {
     console.log('Quantities updated:', quantities);
   }, [quantities]);
 
   return (
-    <section className='listRenderingSection'>
-      <h3 className='secondaryCustomHeader'>Aquí están los productos de tu Lunch</h3>
+    <section className="listRenderingSection">
+      <h3 className="secondaryCustomHeader">Aquí están los productos de tu Lunch</h3>
       <ul>
         {products.map((product) => (
           <div key={product.id} className="productItem">
-            <div className='itemTopDiv'>
-              <p>{getCategoryTitle(product.categoria)} {product.nombre} - <strong>${product.precioUnidad} c/u</strong> </p>
-              <Counter 
-                productId={product.id} 
-                category={product.categoria} 
-              />
+            <div className="itemTopDiv">
+              <p>
+                {product.categoria} {product.nombre} - <strong>${product.precioUnidad} c/u</strong>
+              </p>
+              <Counter productId={product.id} category={product.categoria} />
             </div>
-            <div className='itemBelowDiv'>
-              <button className='deleteButton' onClick={() => handleRemoveProduct(product.id)}>Eliminar Producto</button>
+            <div className="itemBelowDiv">
+              <button
+                className="deleteButton"
+                onClick={() => handleRemoveProduct(product.id)}
+              >
+                Eliminar Producto
+              </button>
               <p>Total: ${calculateTotal(product).toFixed(1)}</p>
             </div>
           </div>
         ))}
       </ul>
       <h4>Total General: ${calculateTotalArray().toFixed(1)}</h4>
-      <button className='whatsAppSendButton' onClick={handleSendWhatsApp}>Enviar pedido por WhatsApp</button>
+      <button className="whatsAppSendButton" onClick={handleSendWhatsApp}>
+        Enviar pedido por WhatsApp
+      </button>
     </section>
   );
 };
