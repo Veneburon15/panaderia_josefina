@@ -51,86 +51,86 @@ const Products = [
         id: 1,
         categoria: 'Sandwiches Triangulares',
         nombre: 'Jamón y queso',
-        precioUnidad: '28'
+        precioUnidad: '30'
     },
     {
         id: 2,
         categoria: 'Sandwiches Triangulares',
         nombre: 'Mixto',
-        precioUnidad: '34'
+        precioUnidad: '37'
     },
     {
         id: 3,
         categoria: 'Sandwiches Triangulares',
         nombre: 'Olímpico',
-        precioUnidad: '39'
+        precioUnidad: '43'
     },
     {
         id: 4,
         categoria: 'Sandwiches Triangulares',
         nombre: 'Olímpico de Pollo',
-        precioUnidad: '41'
+        precioUnidad: '49'
     },
     {
         id: 5,
         categoria: 'Sandwiches Triangulares',
         nombre: 'Surtidos',
-        precioUnidad: '29'
+        precioUnidad: '33'
     },
     {
         id: 6,
         categoria: 'Sandwiches Triangulares',
         nombre: 'Vegetariano',
-        precioUnidad: '41'
+        precioUnidad: '48'
     },
     {
         id: 7,
         categoria: 'Sandwiches Triangulares',
         nombre: 'Bondiola/Pavita/Lomito',
-        precioUnidad: '44'
+        precioUnidad: '55'
     },
-    // // // SANDWICHES DE de Copetín
+    // // // SANDWICHES DE COPETÍN
     {
         id: 8,
         categoria: 'Sandwiches de Copetín',
         nombre: 'Jamón y queso',
-        precioUnidad: '22'
+        precioUnidad: '26'
     },
     {
         id: 9,
         categoria: 'Sandwiches de Copetín',
         nombre: 'Mixtos',
-        precioUnidad: '27'
+        precioUnidad: '30'
     },
     {
         id: 10,
         categoria: 'Sandwiches de Copetín',
         nombre: 'Olímpico',
-        precioUnidad: '29'
+        precioUnidad: '33'
     },
     {
         id: 11,
         categoria: 'Sandwiches de Copetín',
         nombre: 'Olímpico de Pollo',
-        precioUnidad: '37'
+        precioUnidad: '44'
     },
     {
         id: 12,
         categoria: 'Sandwiches de Copetín',
         nombre: 'Surtidos',
-        precioUnidad: '26'
+        precioUnidad: '31'
     },
     {
         id: 13,
         categoria: 'Sandwiches de Copetín',
         nombre: 'Vegetariano',
-        precioUnidad: '37'
+        precioUnidad: '43'
     },
     {
         id: 14,
         categoria: 'Sandwiches de Copetín',
         nombre: 'Bondiola/Pavita/Lomito',
-        precioUnidad: '39'
+        precioUnidad: '45'
     },
     // // // BOCADITOS CALIENTES
     {

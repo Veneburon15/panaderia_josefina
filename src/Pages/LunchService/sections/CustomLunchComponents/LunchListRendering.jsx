@@ -2,7 +2,27 @@ import React, { useState, useEffect } from 'react';
 
 const LunchListRendering = ({ products, setProducts }) => {
   const [quantities, setQuantities] = useState({});
-  const phoneNumber = '59895356894'; // Número en formato internacional sin el '+'
+
+  // Función para inicializar los datos desde localStorage
+  useEffect(() => {
+    const savedProducts = JSON.parse(localStorage.getItem('lunchProducts')) || [];
+    const savedQuantities = JSON.parse(localStorage.getItem('lunchQuantities')) || {};
+
+    if (savedProducts.length > 0) {
+      setProducts(savedProducts);
+    }
+
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      ...savedQuantities,
+    }));
+  }, [setProducts]);
+
+  // Guardar productos y cantidades en localStorage
+  useEffect(() => {
+    localStorage.setItem('lunchProducts', JSON.stringify(products));
+    localStorage.setItem('lunchQuantities', JSON.stringify(quantities));
+  }, [products, quantities]);
 
   // Función para actualizar la cantidad de un producto específico
   const handleCountChange = (productId, newCount) => {
@@ -15,11 +35,10 @@ const LunchListRendering = ({ products, setProducts }) => {
   // Función para eliminar un producto del array
   const handleRemoveProduct = (productId) => {
     const updatedProducts = products.filter((product) => product.id !== productId);
-    setQuantities((prevQuantities) => {
-      const { [productId]: _, ...restQuantities } = prevQuantities;
-      return restQuantities;
-    });
+    const { [productId]: _, ...updatedQuantities } = quantities;
+
     setProducts(updatedProducts);
+    setQuantities(updatedQuantities);
   };
 
   // Determina el paso de incremento basado en la categoría del producto
@@ -38,7 +57,8 @@ const LunchListRendering = ({ products, setProducts }) => {
   };
 
   const Counter = ({ productId, category }) => {
-    const count = quantities[productId] || getIncrementStep(category);
+    const defaultCount = 12;
+    const count = quantities[productId] || defaultCount;
     const incrementStep = getIncrementStep(category);
 
     const handleIncrement = () => {
@@ -47,23 +67,23 @@ const LunchListRendering = ({ products, setProducts }) => {
     };
 
     const handleDecrement = () => {
-      const newCount = count > incrementStep ? count - incrementStep : getIncrementStep(category);
+      const newCount = count > incrementStep ? count - incrementStep : defaultCount;
       handleCountChange(productId, newCount);
     };
 
     return (
       <div className="counter">
-        <button onClick={handleDecrement}>-</button>
+        <button onClick={handleDecrement} disabled={count === defaultCount}> - </button>
         <span>{count}</span>
-        <button onClick={handleIncrement}>+</button>
+        <button onClick={handleIncrement}> + </button>
       </div>
     );
   };
 
   const calculateTotal = (product) => {
-    const pricePerUnit = parseFloat(product.precioUnidad);
-    const count = parseInt(quantities[product.id]) || getIncrementStep(product.categoria);
-    return pricePerUnit * count || 0;
+    const pricePerUnit = parseFloat(product.precioUnidad) || precioUnidad;
+    const count = quantities[product.id] || 12;
+    return pricePerUnit * count;
   };
 
   const calculateTotalArray = () => {
@@ -73,12 +93,14 @@ const LunchListRendering = ({ products, setProducts }) => {
   };
 
   const generateMessage = (products) => {
-    const productDetails = products.map(
-      (product) =>
-        `_*Producto:*_ ${product.nombre}, Precio por unidad: ${product.precioUnidad}, _*Cantidad:*_ ${
-          quantities[product.id] || getIncrementStep(product.categoria)
-        }`
-    ).join('\n');
+    const productDetails = products
+      .map(
+        (product) =>
+          `_*Producto:*_ ${product.nombre}, Precio por unidad: ${product.precioUnidad}, _*Cantidad:*_ ${
+            quantities[product.id] || 12
+          }`
+      )
+      .join('\n');
 
     const total = calculateTotalArray().toFixed(1);
     return `*Tu pedido:*\n${productDetails}\n\n*Precio Total:* $${total}`;
@@ -86,7 +108,7 @@ const LunchListRendering = ({ products, setProducts }) => {
 
   const createWhatsAppLink = (message) => {
     const encodedMessage = encodeURIComponent(message);
-    const phoneNumber = '59895356894'
+    const phoneNumber = '59895356894';
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
 
@@ -95,10 +117,6 @@ const LunchListRendering = ({ products, setProducts }) => {
     const link = createWhatsAppLink(message);
     window.open(link, '_blank');
   };
-
-  useEffect(() => {
-    console.log('Quantities updated:', quantities);
-  }, [quantities]);
 
   return (
     <section className="listRenderingSection">
@@ -113,10 +131,7 @@ const LunchListRendering = ({ products, setProducts }) => {
               <Counter productId={product.id} category={product.categoria} />
             </div>
             <div className="itemBelowDiv">
-              <button
-                className="deleteButton"
-                onClick={() => handleRemoveProduct(product.id)}
-              >
+              <button className="deleteButton" onClick={() => handleRemoveProduct(product.id)}>
                 Eliminar Producto
               </button>
               <p>Total: ${calculateTotal(product).toFixed(1)}</p>
